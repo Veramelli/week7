@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .header {
+            background-color: rgb(212, 212, 212);
+            grid-area: hd;
+        }
+
+        .main {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 100px 50px 50px;
+            background-color: rgb(250, 238, 217);
+            grid-area: mn;
+            gap: 10px;
+        }
+
+        .sectionmain1 {
+            background-color: rgb(255, 224, 167);
+            grid-area: 2/1/3/2;
+        }
+
+        .sectionmain2 {
+            background-color: rgb(255, 224, 167);
+            grid-area: 2/2/3/3;
+        }
+
+        .sectionmain3 {
+            background-color: rgb(255, 224, 167);
+            grid-area: 3/1/4/4;
+        }
+
+        .aside {
+            background-color: rgb(202, 233, 202);
+            grid-area: as;
+        }
+
+        .sectionfooter {
+            background-color: white;
+        }
+
+        @media screen and (min-width:807px) {
+            .body {
+                text-align: center;
+                font-weight: bold;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 70px 1fr 100px;
+                grid-template-areas:
+                    "hd hd hd"
+                    "mn mn as"
+                    "ft ft ft";
+            }
+
+            .footer {
+                background-color: rgb(212, 212, 212);
+                grid-area: ft;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                padding: 15px;
+                gap: 15px;
+            }
+        }
+
+        @media screen and (min-width: 400px) and (max-width: 806px) {
+            .header {
+                height: 10vh;
+            }
+
+            .aside {
+                height: 30vh;
+            }
+
+            .footer {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 399px) {
+            .header {
+                height: 10vh;
+            }
+
+            .aside {
+                height: 30vh;
+            }
+
+            .footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="body">
+    <header class="header">
+        [Шапка страницы]
+    </header>
+
+    <main class="main">
+        [Основная часть]
+        <section class="sectionmain1">
+            [Ещё 1]
+        </section>
+        <section class="sectionmain2">
+            [Ещё 2]
+        </section>
+        <section class="sectionmain3">
+            [Ещё 3]
+        </section>
+    </main>
+
+    <aside class="aside">
+        [Боковая область]
+    </aside>
+
+    <footer class="footer">
+        <section class="sectionfooter">
+            [Секция футера 1]
+        </section>
+        <section class="sectionfooter">
+            [Секция футера 2]
+        </section>
+        <section class="sectionfooter">
+            [Секция футера 3]
+        </section>
+        <section class="sectionfooter">
+            [Секция футера 4]
+        </section>
+    </footer>
+
+</body>
+
+</html>
